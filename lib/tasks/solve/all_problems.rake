@@ -5,7 +5,8 @@ namespace :solve do
     
     puts "%-10s %-14s %-10s %-10s %-11s %-10s" % ["Problem", "Answer", "User", "System", "Total", "Real"]
     
-    ProjectEuler::Problem.descendants.each do |problem|
+    problems = ProjectEuler::Problem.descendants.sort { |x,y| x.name <=> y.name }
+    problems.each do |problem|
       p = problem.new
       problem_number = problem.name.split('m').last
       
