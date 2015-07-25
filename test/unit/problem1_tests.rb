@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/problems/problem1'
 
-class TestMeme < Minitest::Test
+class TestProblem1 < Minitest::Test
   def setup
     @problem1 = Problem1.new
   end
