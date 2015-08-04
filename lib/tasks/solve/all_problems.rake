@@ -5,7 +5,10 @@ namespace :solve do
     
     puts "%-10s %-14s %-10s %-10s %-11s %-10s" % ["Problem", "Answer", "User", "System", "Total", "Real"]
     
-    problems = ProjectEuler::Problem.descendants.sort { |x,y| x.name <=> y.name }
+    problems = ProjectEuler::Problem.descendants.sort do |x,y| 
+      x.name.scan(/\d+/).first.to_i <=> y.name.scan(/\d+/).first.to_i 
+    end
+    
     problems.each do |problem|
       p = problem.new
       problem_number = problem.name.split('m').last
