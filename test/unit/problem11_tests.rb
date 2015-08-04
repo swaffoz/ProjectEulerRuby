@@ -4,7 +4,7 @@ require './lib/problems/problem11'
 
 class TestProblem11 < Minitest::Test
   def setup
-    @problem10 = Problem11.new
+    @problem11 = Problem11.new
   end
   
   def test_solution_answer
